@@ -558,4 +558,8 @@ footer {
     .section-title {
         font-size: 2rem;
     }
+
+    .hero h1 .highlight {
+        white-space: normal;
+    }
 }
