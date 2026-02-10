@@ -449,30 +449,102 @@ footer {
     .navbar {
         flex-direction: column;
         gap: 1rem;
+        padding: 1rem;
+    }
+
+    .logo-symbol {
+        width: 40px;
+        height: 40px;
+        font-size: 2rem;
+    }
+
+    .logo-text {
+        font-size: 1rem;
     }
 
     .hero {
-        flex-direction: column-reverse;
+        flex-direction: column;
+        /* Stack normally, content first */
         text-align: center;
-        padding-top: 140px;
+        padding-top: 120px;
+        min-height: auto;
+        padding-bottom: 4rem;
     }
 
     .hero-content {
-        margin-top: 2rem;
+        order: 1;
+        /* Ensure content is first */
+        margin-top: 0;
+        width: 100%;
     }
 
     .hero h1 {
-        font-size: 2.5rem;
+        font-size: 2rem;
+        /* Smaller font for mobile */
+        word-wrap: break-word;
+        /* Prevent overflow */
+        padding: 0 1rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+        padding: 0 1rem;
     }
 
     .hero-buttons {
         justify-content: center;
+        flex-wrap: wrap;
+        /* Allow buttons to stack */
+        gap: 1rem;
+        padding: 0 1rem;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+        /* Full width buttons on mobile */
+        max-width: 300px;
+        padding: 0.8rem 1rem;
+    }
+
+    .hero-visual {
+        order: 2;
+        /* Visual second */
+        height: 300px;
+        /* Reduced height */
+        margin-top: 2rem;
+        width: 100%;
+        overflow: hidden;
+        /* Contain shapes */
+    }
+
+    .abstract-shape {
+        transform: scale(0.6);
+        /* Shrink shapes */
+    }
+
+    .shape-1 {
+        transform: translate(0, 0) scale(0.6);
+    }
+
+    .shape-2 {
+        transform: translate(0, 0) scale(0.6);
     }
 
     .contact-container {
-        padding: 2rem;
+        padding: 2rem 1.5rem;
         flex-direction: column;
         text-align: center;
+    }
+
+    .contact h2 {
+        font-size: 1.8rem;
+    }
+
+    .contact-detail .email-link {
+        font-size: 1.2rem;
+        /* proper email size */
+        word-break: break-all;
     }
 
     .contact-form-placeholder {
@@ -481,6 +553,9 @@ footer {
 
     .nav-links {
         display: none;
-        /* simple mobile hide for now, usually would add hamburger */
+    }
+
+    .section-title {
+        font-size: 2rem;
     }
 }
