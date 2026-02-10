@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             const targetId = this.getAttribute('href');
             if (targetId === '#') return;
-            
+
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
                 targetElement.scrollIntoView({
@@ -39,4 +39,20 @@ document.addEventListener('DOMContentLoaded', () => {
         card.style.transition = `all 0.6s ease ${index * 0.1}s`; // Staggered delay
         observer.observe(card);
     });
+    // Secure Email Logic
+    const emailLink = document.getElementById('secure-email');
+    if (emailLink) {
+        emailLink.addEventListener('click', function (e) {
+            e.preventDefault();
+            const user = this.getAttribute('data-user');
+            const domain = this.getAttribute('data-domain');
+            const email = `${user}@${domain}`;
+
+            this.textContent = email;
+            window.location.href = `mailto:${email}`;
+
+            // Optional: Revert text after a delay if desired, or keep it revealed
+            // setTimeout(() => { this.textContent = "Cliquez pour afficher"; }, 5000);
+        });
+    }
 });
